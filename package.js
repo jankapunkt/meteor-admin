@@ -1,5 +1,5 @@
 Package.describe({
-  name: "yogiben:admin",
+  name: "jkuester:admin",
   summary: "A complete admin dashboard solution",
   version: "1.2.8",
   git: "https://github.com/yogiben/meteor-admin"
@@ -13,7 +13,6 @@ Package.on_use(function(api){
 
   api.use(
     ['iron:router@1.0.9',
-    'coffeescript',
     'underscore',
     'reactive-var',
     'check',
