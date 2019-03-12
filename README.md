@@ -1,4 +1,4 @@
-# Meteor Admin (Work in Progress)
+# Meteor Admin (Note: all Work in Progress)
 
 `$ meteor add jkuester:admin`
 
@@ -13,6 +13,7 @@ A complete admin dashboard solution for meteor built using
 Lots of improvements with up to date architecture:
 
 * Bootstrap 4
+* Replaces BS3 AdminLTE with a sidebar panel from the [Bootstrap Examples](https://getbootstrap.com/docs/4.3/examples/dashboard/#)
 * No globals used or required
 * Not bound to a specific router
 * No Coffeescript
