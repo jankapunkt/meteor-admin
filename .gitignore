@@ -3,3 +3,5 @@
 *.sublime-project
 .build*
 .versions
+.idea
+.vscode
