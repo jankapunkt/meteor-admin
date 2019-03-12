@@ -1,38 +1,37 @@
 Package.describe({
-  name: "jkuester:admin",
-  summary: "A complete admin dashboard solution",
-  version: "1.2.8",
-  git: "https://github.com/yogiben/meteor-admin"
-});
+  name: 'jkuester:admin',
+  summary: 'A complete admin dashboard solution',
+  version: '1.2.8',
+  git: 'https://github.com/yogiben/meteor-admin'
+})
 
-Package.on_use(function(api){
+Package.on_use(function (api) {
+  both = ['client', 'server']
 
-  both = ['client','server']
-
-  api.versionsFrom('METEOR@1.0');
+  api.versionsFrom('METEOR@1.0')
 
   api.use(
     ['iron:router@1.0.9',
-    'underscore',
-    'reactive-var',
-    'check',
-    'aldeed:collection2@2.5.0',
-    'aldeed:autoform@5.5.1',
-    'aldeed:template-extension@4.0.0',
-    'alanning:roles@1.2.13',
-    'raix:handlebar-helpers@0.2.5',
-    'reywood:publish-composite@1.4.2',
-    'momentjs:moment@2.10.6',
-    'aldeed:tabular@1.4.0',
-    'meteorhacks:unblock@1.1.0',
-    'zimme:active-route@2.3.2',
-    'mfactory:admin-lte@0.0.2'
+      'underscore',
+      'reactive-var',
+      'check',
+      'aldeed:collection2@2.5.0',
+      'aldeed:autoform@5.5.1',
+      'aldeed:template-extension@4.0.0',
+      'alanning:roles@1.2.13',
+      'raix:handlebar-helpers@0.2.5',
+      'reywood:publish-composite@1.4.2',
+      'momentjs:moment@2.10.6',
+      'aldeed:tabular@1.4.0',
+      'meteorhacks:unblock@1.1.0',
+      'zimme:active-route@2.3.2',
+      'mfactory:admin-lte@0.0.2'
     ],
-    both);
+    both)
 
-  api.use(['less@1.0.0 || 2.5.0','session','jquery','templating'],'client')
+  api.use(['less@1.0.0 || 2.5.0', 'session', 'jquery', 'templating'], 'client')
 
-  api.use(['email'],'server')
+  api.use(['email'], 'server')
 
   api.add_files([
     'lib/both/AdminDashboard.js',
@@ -40,7 +39,7 @@ Package.on_use(function(api){
     'lib/both/utils.js',
     'lib/both/startup.js',
     'lib/both/collections.js'
-    ], both);
+  ], both)
 
   api.add_files([
     'lib/client/html/admin_templates.html',
@@ -55,12 +54,12 @@ Package.on_use(function(api){
     'lib/client/js/events.js',
     'lib/client/js/slim_scroll.js',
     'lib/client/js/autoForm.js'
-    ], 'client');
+  ], 'client')
 
   api.add_files([
     'lib/server/publish.js',
     'lib/server/methods.js'
-    ], 'server');
+  ], 'server')
 
-  api.export('AdminDashboard',both)
-});
+  api.export('AdminDashboard', both)
+})
