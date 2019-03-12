@@ -6,12 +6,14 @@ Package.describe({
 })
 
 Package.on_use(function (api) {
-  both = ['client', 'server']
+  const both = ['client', 'server']
 
   api.versionsFrom('METEOR@1.0')
 
   api.use(
-    ['iron:router@1.0.9',
+    [
+      'ecmascript',
+      'iron:router@1.0.9',
       'underscore',
       'reactive-var',
       'check',
@@ -34,7 +36,6 @@ Package.on_use(function (api) {
   api.use(['email'], 'server')
 
   api.add_files([
-    'lib/both/AdminDashboard.js',
     'lib/both/router.js',
     'lib/both/utils.js',
     'lib/both/startup.js',
@@ -61,5 +62,5 @@ Package.on_use(function (api) {
     'lib/server/methods.js'
   ], 'server')
 
-  api.export('AdminDashboard', both)
+  api.mainModule('lib/both/AdminDashboard.js', both)
 })

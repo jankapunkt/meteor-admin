@@ -6,10 +6,19 @@
 A complete admin dashboard solution for meteor built using
 
 * [Bootstrap 4](https://github.com/twbs/bootstrap)
-* [ostrio:flow-router-extra](https://github.com/VeliovGroup/flow-router)
 * [ostrio:i18n](https://github.com/VeliovGroup/Meteor-Internationalization)
 * [roles](https://github.com/alanning/meteor-roles/) 
 * [autoform](https://github.com/aldeed/meteor-autoform)
+
+Lots of improvements with up to date architecture:
+
+* Bootstrap 4
+* No globals used or required
+* Not bound to a specific router
+* No Coffeescript
+* No TAPi18n, so no implicit Cofeescript
+
+
 
 **Feedback Welcome.** Please create an issue.
 
@@ -20,41 +29,36 @@ A complete admin dashboard solution for meteor built using
 
 ### Getting started ###
 
-#### 0. Prerequisites####
-This package is designed to work with certain types of projects. Your project should be using and have configured
-* Iron Router - `meteor add  iron:router`
-* Collection Helpers - `meteor add dburles:collection-helpers`
-* Collection2 - `meteor add aldeed:collection2`
-* An accounts system - e.g. `meteor add accounts-base accounts-password`
-* Roles - `meteor add alanning:roles`
-* Bootstrap 3 - e.g. `meteor add twbs:bootstrap`
-* Fontawesome - e.g. `meteor add fortawesome:fontawesome`
-
 #### 1. Install ####
-Download to your packages directory and run `meteor add jankapunkt:admin` then go to `/admin` for the setup wizzard.
+
+Add from atmosühere via `meteor add jankapunkt:admin` then go to `/admin` for the setup wizzard.
 
 #### 2. Config ####
 The simplest possible config with one, 'Posts', collection.
 
 #####Server and Client#####
 ```javascript
-AdminConfig = {
+import { AdminDashboard } from 'meteor/jkuester:admin'
+
+AdminDashboard.configure({
   collections: {
     Posts: {}
-  }
-};
+  } 
+})
 ```
 This config will make the **first user** admin.
 
 You can also set the adminEmails property which will will override this.
 ```javascript
-AdminConfig = {
+import { AdminDashboard } from 'meteor/jkuester:admin'
+
+AdminDashboard.configure({
   name: 'My App',
   adminEmails: ['ben@code2create.com'],
   collections: {
     Posts: {}
   },
-};
+})
 ```
 #### 3. Define your data models ####
 If you are unfamiliar with [autoform](https://github.com/aldeed/meteor-autoform) or [collection2](https://github.com/aldeed/meteor-collection2) or [collection-helpers](https://github.com/dburles/meteor-collection-helpers) you should check them out now.
