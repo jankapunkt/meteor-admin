@@ -1,20 +1,22 @@
-Meteor Admin
-============
-`$ meteor add yogiben:admin`
+# Meteor Admin (Work in Progress)
 
-To get a working example, clone and run my [Meteor starter](https://github.com/yogiben/meteor-starter) repo and then go to `/admin`.
+`$ meteor add jkuester:admin`
 
-A complete admin dashboard solution for meteor built off the [iron-router](https://github.com/iron-meteor/iron-router),  [roles](https://github.com/alanning/meteor-roles/) and [autoform](https://github.com/aldeed/meteor-autoform) packages and frontend from the open source admin dashboard template, [Admin LTE](https://github.com/almasaeed2010/AdminLTE).
+
+A complete admin dashboard solution for meteor built using
+
+* [Bootstrap 4](https://github.com/twbs/bootstrap)
+* [ostrio:flow-router-extra](https://github.com/VeliovGroup/flow-router)
+* [ostrio:i18n](https://github.com/VeliovGroup/Meteor-Internationalization)
+* [roles](https://github.com/alanning/meteor-roles/) 
+* [autoform](https://github.com/aldeed/meteor-autoform)
 
 **Feedback Welcome.** Please create an issue.
 
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-admin/master/readme/screenshot1.png)
+![alt tag](https://raw.githubusercontent.com/jankapunkt/meteor-admin/master/readme/screenshot1.png)
 
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-admin/master/readme/screenshot2.png)
+![alt tag](https://raw.githubusercontent.com/jankapunkt/meteor-admin/master/readme/screenshot2.png)
 
-Maintained by [Meteor Factory](http://meteorfactory.io). Professional Meteor development.
-
-[![Meteor admin](https://raw.githubusercontent.com/yogiben/meteor-admin/master/readme/meteor-factory.jpg)](http://meteorfactory.io)
 
 ### Getting started ###
 
@@ -29,7 +31,7 @@ This package is designed to work with certain types of projects. Your project sh
 * Fontawesome - e.g. `meteor add fortawesome:fontawesome`
 
 #### 1. Install ####
-Download to your packages directory and run `meteor add yogiben:admin` then go to `/admin` for the setup wizzard.
+Download to your packages directory and run `meteor add jankapunkt:admin` then go to `/admin` for the setup wizzard.
 
 #### 2. Config ####
 The simplest possible config with one, 'Posts', collection.
