@@ -1,48 +1,42 @@
 <template name="AdminHeader">
-    <header class="main-header">
-        <a href="/admin" class="logo">
+    <nav class="navbar navbar-dark fixed-top navbar-expand-lg  bg-dark p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/admin">
             {{#if AdminConfig.name}}
-            {{AdminConfig.name}}
+                {{AdminConfig.name}}
             {{else}}
-            Admin
+                Admin
             {{/if}}
         </a>
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <li>
-                        {{#if AdminConfig.dashboard.homeUrl}}
-                        <a href="{{AdminConfig.dashboard.homeUrl}}">Home</a>
-                        {{else}}
-                        <a href="/">Home</a>
-                        {{/if}}
 
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span>Admin<i class="caret"></i></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="">
-                            <a href="{{pathFor 'adminDashboardUsersEdit' _id=currentUser._id}}">
-                                Your profile
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="btn-sign-out">Sign out
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-tem">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="nav-link sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{pathFor 'adminDashboardUsersEdit' _id=currentUser._id}}">
+                        Your profile
+                    </a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sign out</a>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </nav>
 </template>

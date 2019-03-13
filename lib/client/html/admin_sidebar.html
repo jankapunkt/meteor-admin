@@ -1,4 +1,50 @@
 <template name="AdminSidebar">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{pathFor 'adminDashboard'}}">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                {{#each admin_collections}}
+                    {{#unless $eq showInSideBar false}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-{{this.icon}}"></i>
+                                <span>{{this.label}}</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="{{isActivePath path=newPath}}"><a href="{{newPath}}"><i class="fa fa-angle-double-right"></i> New</a></li>
+                                <li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}"><i class="fa fa-angle-double-right"></i> View All</a></li>
+                                {{#each admin_collection_items}}
+                                    <li class="{{isActivePath path=url}}"><a href="{{url}}"><i class="fa fa-angle-double-right"></i> {{title}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Saved reports</span>
+                <a class="d-flex align-items-center text-muted" href="#">
+                    <span data-feather="plus-circle"></span>
+                </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                {{#each admin_sidebar_items}}
+                {{#if options.urls}}
+                    {{> adminSidebarItemTree}}
+                {{else}}
+                    {{> adminSidebarItem}}
+                {{/if}}
+            {{/each}}
+            </ul>
+        </div>
+    </nav>
+    <!--
 	<aside class="main-sidebar">
 		<div class="sidebar">
 			<ul class="sidebar-menu">
@@ -35,11 +81,12 @@
 			</ul>
 		</div>
 	</aside>
+	-->
 </template>
 
 <template name="adminSidebarItem">
-	<li class="{{isActivePath path=url}}">
-		<a href="{{url}}">
+	<li class="nav-item {{isActivePath path=url}}">
+		<a class="nav-link" href="{{url}}">
 			{{#if options.icon}}
 			<i class="fa fa-{{options.icon}}"></i>
 			{{/if}}
@@ -49,8 +96,8 @@
 </template>
 
 <template name="adminSidebarItemTree">
-	<li class="treeview">
-		<a href="#">
+	<li class="nav-item">
+		<a class="nav-link" href="#">
 			{{#if options.icon}}
 			<i class="fa fa-{{options.icon}}"></i>
 			{{/if}}

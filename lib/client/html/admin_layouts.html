@@ -1,34 +1,41 @@
 <template name="AdminLayout">
     {{#if isInRole 'admin'}}
-        <div class="admin-layout">
             {{> AdminHeader }}
-            {{> AdminSidebar }}
-            <div class="content-wrapper" style="min-height: {{minHeight}}">
-                <section class="content-header">
-                    <h1>
-                        {{$.Session.get 'admin_title'}}
-                        <small>{{$.Session.get 'admin_subtitle'}}</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="/admin/">Dashboard</a></li>
-                        {{#if $.Session.get 'admin_collection_name'}}
-                            <li><a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
-                                {{adminCollectionLabel admin_collection_name}}
-                            </a></li>
-                        {{/if}}
+        <div class="container-fluid">
+            <div class="row">
+                {{> AdminSidebar}}
 
-                        {{#if $.Session.equals 'admin_collection_page' 'new'}}
-                            <li>New</li>
-                        {{/if}}
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1>
+                            {{$.Session.get 'admin_title'}}
+                            <small>{{$.Session.get 'admin_subtitle'}}</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/admin/">Dashboard</a>
+                            </li>
+                            {{#if $.Session.get 'admin_collection_name'}}
+                                <li class="breadcrumb-item">
+                                    <a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
+                                    {{adminCollectionLabel admin_collection_name}}
+                                    </a>
+                                </li>
+                            {{/if}}
 
-                        {{#if $.Session.equals 'admin_collection_page' 'edit'}}
-                            <li>Edit</li>
-                        {{/if}}
-                    </ol>
-                </section>
-                <section class="content">
-                    {{> yield }}
-                </section>
+                            {{#if $.Session.equals 'admin_collection_page' 'new'}}
+                                <li class="breadcrumb-item">New</li>
+                            {{/if}}
+
+                            {{#if $.Session.equals 'admin_collection_page' 'edit'}}
+                                <li class="breadcrumb-item">Edit</li>
+                            {{/if}}
+                        </ol>
+                    </div>
+                    <section class="content">
+                        {{> yield }}
+                    </section>
+                </main>
             </div>
         </div>
         {{> AdminDeleteModal }}
