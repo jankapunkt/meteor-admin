@@ -5,10 +5,10 @@
 
 A complete admin dashboard solution for meteor built using
 
+* [Blaze](http://blazejs.org/)
 * [Bootstrap 4](https://github.com/twbs/bootstrap)
-* [ostrio:i18n](https://github.com/VeliovGroup/Meteor-Internationalization)
-* [roles](https://github.com/alanning/meteor-roles/) 
-* [autoform](https://github.com/aldeed/meteor-autoform)
+* [alanning:roles](https://github.com/alanning/meteor-roles/) 
+* [aldeed:autoform](https://github.com/aldeed/meteor-autoform)
 
 Lots of improvements with up to date architecture:
 
@@ -16,8 +16,7 @@ Lots of improvements with up to date architecture:
 * Replaces BS3 AdminLTE with a sidebar panel from the [Bootstrap Examples](https://getbootstrap.com/docs/4.3/examples/dashboard/#i )
 * No globals used or required
 * Not bound to a specific router
-* No Coffeescript
-* No TAPi18n, so no implicit Cofeescript
+* Not bound to a specific i18n provider
 
 
 
