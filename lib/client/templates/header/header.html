@@ -1,0 +1,50 @@
+<template name="AdminHeader">
+    <nav class="navbar navbar-dark fixed-top navbar-expand-lg  bg-success p-0 shadow">
+        <a class="navbar-brand text-center col-sm-3 col-md-2 mr-0" href="/admin">
+            <h1>
+                {{#if AdminConfig.name}}
+                    {{AdminConfig.name}}
+                {{else}}
+                    Admin
+                {{/if}}
+            </h1>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-tem">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="nav-link sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        Toggle
+                    </a>
+                </li>
+                <li class="nav-tem">
+                    <!-- Sidebar toggle button-->
+                    <a class="nav-link" href="/admin">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{pathFor 'adminDashboardUsersEdit' _id=currentUser._id}}">
+                            Your profile
+                        </a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Sign out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>
