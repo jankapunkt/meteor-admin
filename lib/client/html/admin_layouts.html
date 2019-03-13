@@ -1,6 +1,6 @@
 <template name="AdminLayout">
     {{#if isInRole 'admin'}}
-            {{> AdminHeader }}
+        {{> AdminHeader }}
         <div class="container-fluid bg-light">
             <div class="row">
                 {{> AdminSidebar}}
@@ -18,7 +18,7 @@
                             {{#if $.Session.get 'admin_collection_name'}}
                                 <li class="breadcrumb-item">
                                     <a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
-                                    {{adminCollectionLabel admin_collection_name}}
+                                        {{adminCollectionLabel admin_collection_name}}
                                     </a>
                                 </li>
                             {{/if}}
