@@ -12,6 +12,7 @@ Package.on_use(function (api) {
 
   api.use(
     [
+      'session',
       'ecmascript',
       'iron:router@1.0.9',
       'underscore',
@@ -49,6 +50,7 @@ Package.on_use(function (api) {
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
     'lib/client/css/admin-custom.less',
+    'lib/client/css/dashboard.css',
     'lib/client/js/admin_layout.js',
     'lib/client/js/helpers.js',
     'lib/client/js/templates.js',
