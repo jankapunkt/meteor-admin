@@ -26,9 +26,7 @@ Package.on_use(function (api) {
       'reywood:publish-composite@1.4.2',
       'momentjs:moment@2.10.6',
       'aldeed:tabular@1.4.0',
-      'meteorhacks:unblock@1.1.0',
-      'zimme:active-route@2.3.2',
-      //'mfactory:admin-lte@0.0.2'
+      'meteorhacks:unblock@1.1.0'
     ],
     both)
 
@@ -44,16 +42,18 @@ Package.on_use(function (api) {
   ], both)
 
   api.add_files([
-    'lib/client/html/admin_templates.html',
-    'lib/client/html/admin_widgets.html',
-    'lib/client/html/admin_layouts.html',
-    'lib/client/html/admin_sidebar.html',
-    'lib/client/html/admin_header.html',
-    'lib/client/css/admin-custom.less',
-    'lib/client/css/dashboard.css',
-    'lib/client/js/admin_layout.js',
+    'lib/client/templates/components/components.html',
+    'lib/client/templates/components/components.js',
+    'lib/client/templates/widgets/widgets.html',
+    'lib/client/templates/widgets/widgets.js',
+    'lib/client/templates/layout/layout.html',
+    'lib/client/templates/layout/layout.js',
+    'lib/client/templates/sidebar/sidebar.html',
+    'lib/client/templates/sidebar/sidebar.css',
+    'lib/client/templates/sidebar/sidebar.js',
+    'lib/client/templates/header/header.html',
+    'lib/client/templates/header/header.js',
     'lib/client/js/helpers.js',
-    'lib/client/js/templates.js',
     'lib/client/js/events.js',
     'lib/client/js/slim_scroll.js',
     'lib/client/js/autoForm.js'
