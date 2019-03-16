@@ -13,18 +13,19 @@ Package.on_use(function (api) {
   api.use(
     [
       'ecmascript',
-      'iron:router@1.0.9',
+      'mongo',
+      'dburles:mongo-collection-instances',
+      'iron:router',
       'underscore',
       'reactive-var',
       'check',
-      'aldeed:collection2@2.5.0',
-      'aldeed:autoform@5.5.1',
-      'aldeed:template-extension@4.0.0',
-      'alanning:roles@1.2.13',
-      'reywood:publish-composite@1.4.2',
-      'momentjs:moment@2.10.6',
-      'aldeed:tabular@1.4.0',
-      'meteorhacks:unblock@1.1.0'
+      'aldeed:autoform@6.0.0',
+      'aldeed:template-extension',
+      'alanning:roles',
+      'reywood:publish-composite',
+      'momentjs:moment',
+      'aldeed:tabular',
+      'meteorhacks:unblock'
     ],
     both)
 
