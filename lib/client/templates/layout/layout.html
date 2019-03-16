@@ -8,26 +8,26 @@
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1>
-                            {{$.Session.get 'admin_title'}}
-                            <small>{{$.Session.get 'admin_subtitle'}}</small>
+                            {{AdminCache.get 'admin_title'}}
+                            <small>{{AdminCache.get 'admin_subtitle'}}</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
                                 <a href="/admin/">Dashboard</a>
                             </li>
-                            {{#if $.Session.get 'admin_collection_name'}}
+                            {{#if AdminCache.get 'admin_collection_name'}}
                                 <li class="breadcrumb-item">
-                                    <a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
+                                    <a href="/admin/{{AdminCache.get 'admin_collection_name'}}/">
                                         {{adminCollectionLabel admin_collection_name}}
                                     </a>
                                 </li>
                             {{/if}}
 
-                            {{#if $.Session.equals 'admin_collection_page' 'new'}}
+                            {{#if AdminCache.equals 'admin_collection_page' 'new'}}
                                 <li class="breadcrumb-item">New</li>
                             {{/if}}
 
-                            {{#if $.Session.equals 'admin_collection_page' 'edit'}}
+                            {{#if AdminCache.equals 'admin_collection_page' 'edit'}}
                                 <li class="breadcrumb-item">Edit</li>
                             {{/if}}
                         </ol>

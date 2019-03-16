@@ -1,6 +1,6 @@
 <template name="adminDefaultWidgets">
     {{#each admin_collections}}
-        {{#unless $eq showWidget false}}
+        {{#unless adminEq showWidget false}}
             {{> adminCollectionWidget collection=name}}
         {{/unless}}
     {{/each}}

@@ -12,7 +12,6 @@ Package.on_use(function (api) {
 
   api.use(
     [
-      'session',
       'ecmascript',
       'iron:router@1.0.9',
       'underscore',
@@ -22,7 +21,6 @@ Package.on_use(function (api) {
       'aldeed:autoform@5.5.1',
       'aldeed:template-extension@4.0.0',
       'alanning:roles@1.2.13',
-      'raix:handlebar-helpers@0.2.5',
       'reywood:publish-composite@1.4.2',
       'momentjs:moment@2.10.6',
       'aldeed:tabular@1.4.0',
@@ -30,7 +28,7 @@ Package.on_use(function (api) {
     ],
     both)
 
-  api.use(['less@1.0.0 || 2.5.0', 'session', 'jquery', 'templating'], 'client')
+  api.use(['less@1.0.0 || 2.5.0', 'jquery', 'templating'], 'client')
 
   api.use(['email'], 'server')
 

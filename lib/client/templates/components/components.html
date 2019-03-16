@@ -140,15 +140,15 @@
 </template>
 
 <template name="adminAlert">
-    {{#if $.Session.get 'adminSuccess'}}
+    {{#if AdminCache.get 'adminSuccess'}}
         <div class="alert alert-success admin-alert">
-            {{$.Session.get 'adminSuccess'}}
+            {{AdminCache.get 'adminSuccess'}}
         </div>
     {{/if}}
 
-    {{#if $.Session.get 'adminError'}}
+    {{#if AdminCache.get 'adminError'}}
         <div class="alert alert-danger admin-alert">
-            {{$.Session.get 'adminError'}}
+            {{AdminCache.get 'adminError'}}
         </div>
     {{/if}}
 </template>
