@@ -1,41 +1,41 @@
 <template name="AdminSidebar">
     <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
         <div class="sidebar-sticky">
-            <ul class="nav nav-pills text-light flex-column">
+            <ul class="nav nav-pills text-light flex-column sidebar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{pathFor 'adminDashboard'}}">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <a class="nav-link text-light" href="{{pathFor 'adminDashboard'}}">
+                        <i class="fa fa-fw fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
                 {{#each admin_collections}}
                     {{#unless $eq showInSideBar false}}
                         <li class="nav-item">
-                            <a class="nav-link"
+                            <a class="nav-link text-light d-flex"
                                href="#"
                                type="button"
                                data-toggle="collapse"
                                data-target="#{{this.name}}_collapse"
                                aria-expanded="false"
                                aria-controls="collapseExample">
-                                <i class="fa fa-{{this.icon}}"></i> <span>{{this.label}}</span>
-                                <i class="fa fa-angle-left ml-auto"></i>
+                                <span><i class="fa fa-fw fa-{{this.icon}}"></i> {{this.label}}</span>
+                                <i class="fa fa-fw fa-angle-left ml-auto"></i>
                             </a>
                             <div class="collapse fade" id="{{this.name}}_collapse" aria-expanded="false">
                                 <ul class="nav nav-pills flex-column pl-3">
                                     <li class="nav-item {{isActivePath path=newPath}}">
-                                        <a class="nav-link" href="{{newPath}}">
-                                            <i class="fa fa-angle-double-right"></i> New
+                                        <a class="nav-link text-light" href="{{newPath}}">
+                                            <i class="fa fa-fw fa-angle-double-right"></i> New
                                         </a>
                                     </li>
                                     <li class="nav-item {{isActivePath path=viewPath}}">
-                                        <a class="nav-link" href="{{viewPath}}">
-                                            <i class="fa fa-angle-double-right"></i> View All
+                                        <a class="nav-link text-light" href="{{viewPath}}">
+                                            <i class="fa fa-fw fa-angle-double-right"></i> View All
                                         </a>
                                     </li>
                                     {{#each admin_collection_items}}
                                         <li class="nav-item {{isActivePath path=url}}">
-                                            <a class="nav-link" href="{{url}}">
-                                                <i class="fa fa-angle-double-right"></i> {{title}}
+                                            <a class="nav-link text-light" href="{{url}}">
+                                                <i class="fa fa-fw fa-angle-double-right"></i> {{title}}
                                             </a>
                                         </li>
                                     {{/each}}
@@ -69,7 +69,7 @@
 
 <template name="adminSidebarItem">
     <li class="nav-item {{isActivePath path=url}}">
-        <a class="nav-link" href="{{url}}">
+        <a class="nav-link text-light" href="{{url}}">
             {{#if options.icon}}
                 <i class="fa fa-{{options.icon}}"></i>
             {{/if}}
@@ -80,7 +80,7 @@
 
 <template name="adminSidebarItemTree">
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link text-light" href="#">
             {{#if options.icon}}
                 <i class="fa fa-{{options.icon}}"></i>
             {{/if}}
