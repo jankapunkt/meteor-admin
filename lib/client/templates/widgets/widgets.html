@@ -1,9 +1,11 @@
 <template name="adminDefaultWidgets">
-    {{#each admin_collections}}
-        {{#unless adminEq showWidget false}}
-            {{> adminCollectionWidget collection=name}}
-        {{/unless}}
-    {{/each}}
+    <div class="row">
+        {{#each admin_collections}}
+            {{#unless adminEq showWidget false}}
+                {{> adminCollectionWidget collection=name}}
+            {{/unless}}
+        {{/each}}
+    </div>
 </template>
 
 <template name="adminCollectionWidget">
