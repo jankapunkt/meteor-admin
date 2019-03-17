@@ -162,13 +162,13 @@
 </template>
 
 <template name="adminEditBtn">
-    <a href="{{path}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
-    <a href="{{path}}" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+    <a href="{{path}}" class="btn btn-sm btn-primary text-nowrap">
+        <i class="fa fa-fw fa-pencil"></i> <span class="d-sm-none d-md-inline">Edit</span>
+    </a>
 </template>
 
 <template name="adminDeleteBtn">
-    <a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal'
-       class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a>
-    <a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="visible-xs btn btn-sm btn-danger btn-delete"><i
-            class="fa fa-times" doc="{{_id}}"></i> Delete</a>
+    <a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="btn btn-sm btn-danger btn-delete text-nowrap">
+        <i class="fa fa-fw fa-times" doc="{{_id}}"></i> <span class="d-sm-none d-md-inline">Delete</span>
+    </a>
 </template>
